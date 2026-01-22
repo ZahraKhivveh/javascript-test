@@ -709,8 +709,46 @@ basket.map(function(product){
     sum+=product.price
 });
 totalPrice=sum+postCost;
-console.log(totalPrice);*/
+console.log(totalPrice);
 // !EXERCISE--42
+let number1=[1,2,3,4,5,6,7,8,9,];
+let name1=["ali" , "reza" , "mamad", "nadia"];
+// ! Fill
+// name1.fill("jj");
+console.log(name1);
+// ! is Array
+console.log(Array.isArray(name1));
+// ! index of
+console.log(name1.indexOf("reza"));
+// ! slice 
+console.log(number1.slice(2,4));
+// ! splice
+console.log(number1.splice(2,4));
+// ! join
+console.log(name1.join("-"));
+// ! reverse 
+console.log(number1.reverse());
+console.log(name1.reverse()); 
+// !!EXERCISE--42
+let userWord =prompt(`enter word like gig:`);  /ali/
+let convert1= userWord.split("");              /"a" "l" "i"/ 
+let convert2= convert1.reverse();               /"i" "l" "a"/    
+let convert3= convert2.join("");                /ila/
+if(userWord === convert2){                       /===/
+    alert(`right`);
+}else{
+    alert(`no wrong!`);
+}*/
+// !!EXERCISE--43
+
+
+
+
+
+
+
+
+
 
 
 
