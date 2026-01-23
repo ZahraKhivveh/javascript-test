@@ -739,7 +739,48 @@ if(userWord === convert2){                       /===/
 }else{
     alert(`no wrong!`);
 }*/
-// !!EXERCISE--43
+// !!EXERCISE--43 ---------------------------------------------------
+const todos = [
+  { id: 1, title: "learn js", isDone: false },
+  { id: 2, title: "go to gym", isDone: false },
+  { id: 3, title: "learn react", isDone: false },
+];
+
+let userTodo=prompt("choice option: \n 1.add todo \n 2.remove todo \n 3.change the status");
+if(userTodo !==1 || userTodo !==2 || userTodo !==3 ){
+    alert(`enter the true option!`);
+}else{
+    if(userTodo === 1){
+        let newUserTodo =prompt(`please enter your new Todo title`);
+        let newTodo={id:todos.length+1 , title:newUserTodo , isDone:false};
+        todos.push(newTodo);
+        console.log(newTodo);
+        
+    }else if(userTodo===2){
+            let removeUserTodo =prompt(`please enter your Todo title for remove`);
+            let removeTodo= todos.findIndex(function(todo){
+                return todo.title === removeUserTodo;
+            });
+            if(removeTodo=== -1){
+                alert(`not exist`);
+        }else{
+            alert(`successfully removed`);
+        }
+        console.log(todos);
+        
+        }else{
+            let isDoneUser =prompt(`please enter your todo name`);
+            todos.forEach(function(todo){
+                if(isDoneUser === todo.title){
+                    todo.isDone===true;
+                }else{
+                    alert(`not founded`);
+                }
+            });
+            console.log(todos);
+            
+        }
+    }
 
 
 
