@@ -738,7 +738,7 @@ if(userWord === convert2){                       /===/
     alert(`right`);
 }else{
     alert(`no wrong!`);
-}*/
+}
 // !!EXERCISE--43 ---------------------------------------------------
 const todos = [
   { id: 1, title: "learn js", isDone: false },
@@ -746,16 +746,18 @@ const todos = [
   { id: 3, title: "learn react", isDone: false },
 ];
 
-let userTodo=prompt("choice option: \n 1.add todo \n 2.remove todo \n 3.change the status");
+let userTodo = prompt("choose option: \n 1.add todo \n 2.remove todo \n 3.change the status");
 if(userTodo !==1 || userTodo !==2 || userTodo !==3 ){
     alert(`enter the true option!`);
 }else{
-    if(userTodo === 1){
+        /add todo/ 
+        if(userTodo === 1){
         let newUserTodo =prompt(`please enter your new Todo title`);
-        let newTodo={id:todos.length+1 , title:newUserTodo , isDone:false};
+        let newTodo= {id:todos.length+1 , title:newUserTodo , isDone:false};
         todos.push(newTodo);
         console.log(newTodo);
         
+    /remove todo/ 
     }else if(userTodo===2){
             let removeUserTodo =prompt(`please enter your Todo title for remove`);
             let removeTodo= todos.findIndex(function(todo){
@@ -768,6 +770,7 @@ if(userTodo !==1 || userTodo !==2 || userTodo !==3 ){
         }
         console.log(todos);
         
+    /change todo/ 
         }else{
             let isDoneUser =prompt(`please enter your todo name`);
             todos.forEach(function(todo){
@@ -780,7 +783,45 @@ if(userTodo !==1 || userTodo !==2 || userTodo !==3 ){
             console.log(todos);
             
         }
+    
     }
+// !!EXERCISE--44
+let tasks={
+    ali:["js" , "angular"],
+    omid:["seo" , "wordpress"],
+    meysam:["Ec6+" , "node"],
+    nader:["python" , "react"],
+};
+let newTaskName=  prompt(`enter your employer command`);
+let employName= prompt(`enter your employer`);
+
+let employTask=tasks[employName];
+if(employTask === undefined){
+    alert(`we dont found them.`);
+}else{
+    employTask.push(newTaskName);
+}
+console.log(tasks);*/
+// !!EXERCISE--45
+let provices={
+    fars:["lar" , "zaqan" , "abade"],
+    tehran:["pardihs" , "shahriyar" , "rey"],
+    khozestan:["abadan" ,"aghajary" , "hamidie"]
+};
+let userProvice= prompt(`enter your Provice`);
+let proviceCity= provices[userProvice];
+
+let cityText="";
+let i=1;
+if(provices===undefined){
+    alert(`not founded`);
+}else{
+   proviceCity.forEach(function(city) {
+    cityText +=i + "." + city + "\n";
+    i++;
+   }); 
+}
+alert(cityText);
 
 
 
