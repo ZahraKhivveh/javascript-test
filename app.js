@@ -801,7 +801,7 @@ if(employTask === undefined){
 }else{
     employTask.push(newTaskName);
 }
-console.log(tasks);*/
+console.log(tasks);
 // !!EXERCISE--45
 let provices={
     fars:["lar" , "zaqan" , "abade"],
@@ -821,9 +821,25 @@ if(provices===undefined){
     i++;
    }); 
 }
-alert(cityText);
-
-
+alert(cityText);*/
+// !!EXERCISE--45
+let questions=[
+    {id:1, theQuestion:"10+20" , answer:30},
+    {id:2, theQuestion:"20+20" , answer:40},
+    {id:3, theQuestion:"30+20" , answer:50},
+    {id:4, theQuestion:"40+20" , answer:60},
+    {id:5, theQuestion:"50+20" , answer:70},
+];
+let userAnswer="";
+let score=0;
+questions.forEach(function(question){
+    userAnswer= prompt(question.theQuestion + "?");
+    if(userAnswer.toLowerCase() === answer){
+        score++;
+    }
+        
+});
+alert(`your score is ${score *20}`);
 
 
 
