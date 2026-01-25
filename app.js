@@ -936,6 +936,18 @@ let timer= setInterval(function(){
 //  ?------------------------------Intermediate Level--------------------------------
 //  ?=========================================================================================
  // ! EXERCISE--53
+ let h2Elems= document.getElementsByTagName("h2");
+ console.log(h2Elems);
+ let idss= document.getElementById("h1yy");
+ console.log(idss);
+ let clasess= document.getElementsByClassName("unorder-list");
+ console.log(clasess);
+ let aa= document.querySelector(".unorder-list");
+ console.log(aa);
+ 
+ 
+ 
+ 
  
 
     
