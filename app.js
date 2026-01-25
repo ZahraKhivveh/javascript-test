@@ -929,7 +929,6 @@ let timer= setInterval(function(){
          alert(`good`);
         }else{
         alert(`choose a profile`);
-        
     }
  },5000)
 
