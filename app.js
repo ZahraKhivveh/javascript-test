@@ -729,7 +729,7 @@ console.log(name1.join("-"));
 // ! reverse 
 console.log(number1.reverse());
 console.log(name1.reverse()); 
-// !!EXERCISE--42
+// !!EXERCISE--43
 let userWord =prompt(`enter word like gig:`);  /ali/
 let convert1= userWord.split("");              /"a" "l" "i"/ 
 let convert2= convert1.reverse();               /"i" "l" "a"/    
@@ -739,7 +739,7 @@ if(userWord === convert2){                       /===/
 }else{
     alert(`no wrong!`);
 }
-// !!EXERCISE--43 ---------------------------------------------------
+// !!EXERCISE--44 ---------------------------------------------------
 const todos = [
   { id: 1, title: "learn js", isDone: false },
   { id: 2, title: "go to gym", isDone: false },
@@ -785,7 +785,7 @@ if(userTodo !==1 || userTodo !==2 || userTodo !==3 ){
         }
     
     }
-// !!EXERCISE--44
+// !!EXERCISE--45
 let tasks={
     ali:["js" , "angular"],
     omid:["seo" , "wordpress"],
@@ -802,7 +802,7 @@ if(employTask === undefined){
     employTask.push(newTaskName);
 }
 console.log(tasks);
-// !!EXERCISE--45
+// !!EXERCISE--46
 let provices={
     fars:["lar" , "zaqan" , "abade"],
     tehran:["pardihs" , "shahriyar" , "rey"],
@@ -821,8 +821,8 @@ if(provices===undefined){
     i++;
    }); 
 }
-alert(cityText);*/
-// !!EXERCISE--45
+alert(cityText);
+// ! EXERCISE--47
 let questions=[
     {id:1, theQuestion:"10+20" , answer:30},
     {id:2, theQuestion:"20+20" , answer:40},
@@ -840,15 +840,98 @@ questions.forEach(function(question){
         
 });
 alert(`your score is ${score *20}`);
+// ! EXERCISE--48
+let number1=+prompt("please enter number 1:");
+let number2=+prompt("please enter number 2:");
+let calc=+prompt("which one? \n1.+ \n 2.- \n 3.* \n 4./");
 
+if(isNaN(number1) || isNaN(number2)) {
+alert(`just enter number`);
+}else{
+     if(calc!==1 &&  calc!==2 && calc!==3 && calc!==4) {
+    alert("wrong sign!");
+}else{
+    if(calc ===1){
+        let sum= number1 + number2 ;
+        alert(`it is ${sum}`);
+    }else
+        if(calc===2){
+            let nuines=number1 - number2;
+            alert(`it is ${nuines}`);
+        }else
+            if(calc===3){
+                let devid=number1 / number2;
+                alert(`it is ${devid}`);
+            }else{
+                let multi=number1*number2;
+                alert(`it is ${multi}`);
+            }
+}
+   
+}
+// ! EXERCISE--48  
+let text ="0123456789abcdefghijklmnopqrstuvwxyz";
+let captcha="";
+let randomIndex;
+for(i=0; i<5; i++){
+randomIndex= Math.floor(Math.random()* text.length);
+captcha += text[randomIndex];
+}
+alert(captcha);
+// ! EXERCISE--49
+let products=[
+    {id:1 , title:"milk1" , price:110 , shortLink:"hdfjs1"},
+    {id:2 , title:"milk2" , price:120 , shortLink:"hdfjs2"},
+    {id:3 , title:"milk3" , price:130 , shortLink:"hdfjs3"},
+    {id:4 , title:"milk4" , price:140 , shortLink:"hdfjs4"},
+    {id:5 , title:"milk5" , price:150 , shortLink:"hdfjs5"},
+    {id:6 , title:"milk6" , price:160 , shortLink:"hdfjs6"},
+];
+let userLink=prompt(`please enter the name of product:`);
+let mainProduct= products.find(function(product){
+    return userLink === product.title;
+});
+if(mainProduct === undefined){
+    alert(`no founded`);
+}else{
+    alert(`this is the ${mainProduct.title} - ${mainProduct.price}`);
+}
+// ! EXERCISE--50
+// ? console.log(eval("2*10"));
+let i=0;
+let timer= setInterval(function(){
+    console.log(i++);
+    if(i===10){
+        clearInterval(timer);
+        alert(`DONE`);
+    }
+} , 1000);
+// ! EXERCISE--51
+let minute=+prompt(`enter your minute:`);
+let second=+prompt(`enter your second:`);
 
-
-
-
-
-
-
-
+let timer= setInterval(function(){
+    if(second=== -1){
+        minute--;
+        second=59;
+    }
+    if(minute===0 && second===0 ){
+        clearInterval(timer);
+        alert(`DONE`);
+    }
+    console.log(`timer= ${minute} : ${second}`);
+    second--;
+} , 1000);*/
+ // ! EXERCISE--52
+ let hasProfile=false;
+ setTimeout(function(){
+    if(!hasProfile){
+         alert(`good`);
+        }else{
+        alert(`choose a profile`);
+        
+    }
+ },5000)
 
  
 
