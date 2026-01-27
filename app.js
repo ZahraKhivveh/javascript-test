@@ -954,10 +954,12 @@ let timer= setInterval(function(){
     btn.onclick=logger;*/
 // ! EXERCISE--55
   let btn= document.querySelector(".click-btn");
- function logger(){
-     alert("your information has been done");
-    }
-    btn.addEventListener("click" , logger);
+  let ids=document.querySelector("#h1yy");
+ 
+    btn.addEventListener("click" , function (){
+     console.log("your information has been done");
+    ids.style.color="yellow";
+    });
  
  
  
