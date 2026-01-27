@@ -931,7 +931,7 @@ let timer= setInterval(function(){
     if(!hasProfile){
         alert(`choose a profile`);
     }
- },5000)*/
+ },5000)
 //  ?=========================================================================================
 //  ?------------------------------Intermediate Level--------------------------------
 //  ?=========================================================================================
@@ -944,6 +944,23 @@ let timer= setInterval(function(){
  console.log(clasess);
  let aa= document.querySelector(".unorder-list");
  console.log(aa);
+ console.log(aa.className);
+ aa.style.color="blue";
+ // ! EXERCISE--54
+ let btn= document.querySelector(".click-btn");
+ function logger(){
+     alert("your information has been done");
+    }
+    btn.onclick=logger;*/
+// ! EXERCISE--55
+  let btn= document.querySelector(".click-btn");
+ function logger(){
+     alert("your information has been done");
+    }
+    btn.addEventListener("click" , logger);
+ 
+ 
+ 
  
  
  
