@@ -951,7 +951,7 @@ let timer= setInterval(function(){
  function logger(){
      alert("your information has been done");
     }
-    btn.onclick=logger;*/
+    btn.onclick=logger;
 // ! EXERCISE--55
   let btn= document.querySelector(".click-btn");
   let ids=document.querySelector("#h1yy");
@@ -959,7 +959,8 @@ let timer= setInterval(function(){
     btn.addEventListener("click" , function (){
      console.log("your information has been done");
     ids.style.color="yellow";
-    });
+    });*/
+    // ! EXERCISE--56
  
  
  
