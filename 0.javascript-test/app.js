@@ -959,14 +959,15 @@ let timer= setInterval(function(){
     btn.addEventListener("click" , function (){
      console.log("your information has been done");
     ids.style.color="yellow";
-    });*/
+    });
     // ! EXERCISE--56
     let h5Elem=document.createElement("h1");
     h5Elem.innerHTML="this is h1 tag";
     h5Elem.className= "h5-class";
     console.log(h5Elem);
     h5Elem.style.color="red";
-    document.body.append(h5Elem);
+    document.body.append(h5Elem);*/
+     // ! EXERCISE--57
 
     
  
