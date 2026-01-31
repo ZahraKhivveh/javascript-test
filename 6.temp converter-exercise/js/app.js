@@ -10,9 +10,9 @@ function calcTemp(){
    resultElem.innerHTML = ftemp;
   }
 }
-function clearDate (){
+function clearData (){
   tempInput.value = "";
   resultElem.innerHTML = "";
 }
 convertBtn.addEventListener("click" , calcTemp);
-clearBtn.addEventListener("click" , clearDate );
+clearBtn.addEventListener("click" , clearData );

@@ -968,6 +968,10 @@ let timer= setInterval(function(){
     h5Elem.style.color="red";
     document.body.append(h5Elem);*/
      // ! EXERCISE--57
+     let btn = document.querySelector(".btn");
+     btn.addEventListener("click" , function(event){
+        console.log("event -->" , event);
+     });
 
     
  
