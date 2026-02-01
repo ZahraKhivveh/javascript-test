@@ -966,12 +966,27 @@ let timer= setInterval(function(){
     h5Elem.className= "h5-class";
     console.log(h5Elem);
     h5Elem.style.color="red";
-    document.body.append(h5Elem);*/
+    document.body.append(h5Elem);
      // ! EXERCISE--57
      let btn = document.querySelector(".btn");
      btn.addEventListener("click" , function(event){
         console.log("event -->" , event);
+     });*/
+     // ! EXERCISE--58
+     let btn = document.querySelector(".btn");
+     let h1elem = document.querySelector("#h1yy");
+     btn.addEventListener("click" , function(){
+        h1elem.remove();
      });
+     // ! EXERCISE--59
+     let list = document.querySelectorAll(".unorder-list");
+     list.forEach(function(list){
+        list.addEventListener("click" , function(event){
+            event.target.remove();
+     });
+     });
+
+     // ! EXERCISE--60
 
     
  
