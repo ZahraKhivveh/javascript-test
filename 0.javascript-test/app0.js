@@ -1022,6 +1022,10 @@ let timer= setInterval(function(){
         removeTodoBtn.innerHTML = "حذف";
         removeTodoBtn.className = "delete";
 
+        removeTodoBtn.addEventListener("click" , function(event){
+            event.target.parentElement.parentElement.remove();
+        });
+
         todoDataDiv.append(todoTitleElem);
         todoButtonsDiv.append(removeTodoBtn);
          articlesElem.append(todoDataDiv);
