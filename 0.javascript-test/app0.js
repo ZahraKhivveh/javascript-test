@@ -971,7 +971,7 @@ let timer= setInterval(function(){
      let btn = document.querySelector(".btn");
      btn.addEventListener("click" , function(event){
         console.log("event -->" , event);
-     });*/
+     });
      // ! EXERCISE--58
      let btn = document.querySelector(".btn");
      let h1elem = document.querySelector("#h1yy");
@@ -984,9 +984,63 @@ let timer= setInterval(function(){
         list.addEventListener("click" , function(event){
             event.target.remove();
      });
-     });
-
+     });*/
      // ! EXERCISE--60
+    let openModalButton = document.querySelector(".open-modal-button");
+    let addTodoModal = document.querySelector(".modal-screen");
+    let cancelBtn = document.querySelector(".cancel"); 
+    let closeModalX = document.querySelector(".close-modal-x");
+    let createTodoBtn = document.querySelector(".create");
+    let todoInput = document.querySelector(".input");
+    const todosContainer = document.querySelector(".todos-container");
+
+    function showModal(){
+        addTodoModal.classList.remove("hidden");
+        todoInput.focus();
+    };
+    
+    function hideModal(){
+        addTodoModal.classList.add("hidden");
+    };
+
+    function addTodo(){
+        let newTodoTitle = todoInput.value;
+
+        let articlesElem = document.createElement("article");
+        articlesElem.className = "todo";
+        
+        let todoDataDiv = document.createElement("div");
+        todoDataDiv.className = "todo-data";
+
+        let todoTitleElem = document.createElement("p");
+        todoTitleElem.innerHTML = newTodoTitle;
+
+        let todoButtonsDiv = document.createElement("div");
+        todoButtonsDiv.className = "todo-buttons";
+
+        let removeTodoBtn = document.createElement("button");
+        removeTodoBtn.innerHTML = "حذف";
+        removeTodoBtn.className = "delete";
+
+        todoDataDiv.append(todoTitleElem);
+        todoButtonsDiv.append(removeTodoBtn);
+         articlesElem.append(todoDataDiv);
+        articlesElem.append(todoButtonsDiv);
+        todosContainer.append(articlesElem);
+        hideModal();
+        todoInput.value="";     
+    }
+
+    openModalButton.addEventListener("click" , showModal);
+    cancelBtn.addEventListener("click" , hideModal);
+  closeModalX.addEventListener("click" , hideModal);
+  createTodoBtn.addEventListener("click", addTodo);
+    document.body.addEventListener("keydown" , function(event){
+       if(event.key==="Escape"){
+        hideModal();
+       }
+    });
+
 
     
  
