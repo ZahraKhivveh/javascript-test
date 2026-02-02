@@ -984,7 +984,7 @@ let timer= setInterval(function(){
         list.addEventListener("click" , function(event){
             event.target.remove();
      });
-     });*/
+     });
      // ! EXERCISE--60
     let openModalButton = document.querySelector(".open-modal-button");
     let addTodoModal = document.querySelector(".modal-screen");
@@ -1043,8 +1043,33 @@ let timer= setInterval(function(){
        if(event.key==="Escape"){
         hideModal();
        }
-    });
+    });*/
+// ! EXERCISE--61
+let contextMenu = document.querySelector(".contextmenu");
+function showContextMenu(event){
+    event.preventDefault();
+ if(contextMenu.style.display = "none"){
+    contextMenu.style.display = "block";
+     contextMenu.style.left = `${event.pageX}px`;
+     contextMenu.style.top =`${event.pageY}px`;
+ }else{
+    contextMenu.style.left = `${event.pageX}px`;
+    contextMenu.style.top = `${event.pageY}px`;
+ }   
+}
 
+function hideContextMenu(){
+    contextMenu.style.display = "none";
+}
+
+function hideContextMenuWithEscape(event){
+if(event.key === "Escape"){
+    contextMenu.style.display = "none";
+}
+}
+document.body.querySelector("click" , hideContextMenu);
+document.addEventListener("contextmenu" , showContextMenu);
+document.body.addEventListener("keydown" , hideContextMenuWithEscape);
 
     
  
