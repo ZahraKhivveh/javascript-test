@@ -1043,7 +1043,7 @@ let timer= setInterval(function(){
        if(event.key==="Escape"){
         hideModal();
        }
-    });*/
+    });
 // ! EXERCISE--61
 let contextMenu = document.querySelector(".contextmenu");
 function showContextMenu(event){
@@ -1067,12 +1067,47 @@ if(event.key === "Escape"){
     contextMenu.style.display = "none";
 }
 }
-document.body.querySelector("click" , hideContextMenu);
 document.addEventListener("contextmenu" , showContextMenu);
+document.body.querySelector("click" , hideContextMenu);
 document.body.addEventListener("keydown" , hideContextMenuWithEscape);
+// ! EXERCISE--62
+let aa =document.querySelector(".loading-screen");
+function showSite(){
+    aa.classList.add("hidden");
+}
+document.addEventListener("load" , showSite );
+// ! EXERCISE--63
+let input = document.querySelector("input");
+let reminding = document.querySelector(".max-length");
+// let lengthNUM = +input.getAttribute("maxlength");
 
-    
- 
+function num(){
+    reminding.innerHTML = 11 - input.value.length ;
+}
+document.addEventListener("keyup" , num);*/
+// ! EXERCISE--64
+let loginButton = document.querySelector(".login-button");
+let modal = document.querySelector(".modal-screen");
+let closeI = document.querySelector(".close");
+let closeX = document.querySelector(".close-x-btn"); 
+let continueBtn = document.querySelector(".continue");
+
+function showModal(){
+modal.classList.remove("hidden");
+}
+function hideModal(){
+    modal.classList.add("hidden");
+}
+loginButton.addEventListener("click" , showModal);
+modal.addEventListener("click" , hideModal);
+closeX.addEventListener("click" , hideModal);
+closeI.addEventListener("click" , hideModal);
+continueBtn.addEventListener("click" , hideModal);
+document.body.addEventListener("keyup" , function esc(event){
+    if(event.key === "Escape"){
+        hideModal();
+    }
+ });
  
  
  
