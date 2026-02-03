@@ -1084,8 +1084,7 @@ let reminding = document.querySelector(".max-length");
 function num(){
     reminding.innerHTML = 11 - input.value.length ;
 }
-document.addEventListener("keyup" , num);*/
-// ! EXERCISE--64
+document.addEventListener("keyup" , num);
 let loginButton = document.querySelector(".login-button");
 let modal = document.querySelector(".modal-screen");
 let closeI = document.querySelector(".close");
@@ -1107,7 +1106,19 @@ document.body.addEventListener("keyup" , function esc(event){
     if(event.key === "Escape"){
         hideModal();
     }
- });
+ });*/
+// ! EXERCISE--65
+let clientHeader = document.querySelector(".client-header");
+function nav (){
+    if(document.documentElement.scrollTop > 35){
+        clientHeader.classList.add("sticky-header");
+    }else{
+        clientHeader.classList.remove("sticky-header");
+
+    }
+}
+document.addEventListener("scroll" , nav);
+
  
  
  
