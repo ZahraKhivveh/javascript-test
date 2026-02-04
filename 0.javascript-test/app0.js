@@ -1106,7 +1106,7 @@ document.body.addEventListener("keyup" , function esc(event){
     if(event.key === "Escape"){
         hideModal();
     }
- });*/
+ });
 // ! EXERCISE--65
 let clientHeader = document.querySelector(".client-header");
 function nav (){
@@ -1117,8 +1117,39 @@ function nav (){
 
     }
 }
-document.addEventListener("scroll" , nav);
-
+document.addEventListener("scroll" , nav);*/
+// ! EXERCISE--66
+let createButton = document.querySelector(".create-button");
+let modal = document.querySelector(".modal-screen");
+let closeXBtn = document.querySelector(".close");
+let closeModalBtn = document.querySelector(".close-x-btn");
+let createNoteBtn = document.querySelector(".continue");
+let textarea = document.querySelector("textarea");
+let colorsBoxes = document.querySelectorAll(".colors-box");
+let mainColor;
+function showModal (){
+modal.classList.remove("hidden");
+}
+function hideModal(){
+    modal.classList.add("hidden");
+}
+function addNote(){
+let note = textarea.value;
+}
+colorsBoxes.forEach(function (colorBox) {
+  colorBox.addEventListener("click", function (event) {
+    mainColor = event.target.dataset.color;
+  });
+});
+createButton.addEventListener("click" , showModal);
+closeModalBtn.addEventListener("click" , hideModal);
+closeXBtn.addEventListener("click" , hideModal);
+closeModalBtn.addEventListener("click" , addNote);
+document.body.addEventListener("keyup" , function(event){
+    if(event.key === "Escape"){
+        hideModal();
+    }
+})
  
  
  
