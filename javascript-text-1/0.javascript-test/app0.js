@@ -1187,7 +1187,7 @@ btn.addEventListener("click" , scrollTO);*/
   // ! EXERCISE--68
   const list = document.querySelector(".order-list");
   list.insertAdjacentHTML("afterend" , `<div><a>zahra</a></div>`);
-
+// ! EXERCISE--69
  
  
  
