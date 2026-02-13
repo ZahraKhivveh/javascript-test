@@ -1186,7 +1186,7 @@ document.body.addEventListener("keyup" , function(event){
 btn.addEventListener("click" , scrollTO);
   // ! EXERCISE--68
   const list = document.querySelector(".order-list");
-  list.insertAdjacentHTML("afterend" , `<div><a>zahra</a></div>`);*/
+  list.insertAdjacentHTML("afterend" , `<div><a>zahra</a></div>`);
 // ! EXERCISE--69
 let playBtns = document.querySelectorAll(".play-btn");
 let music = document.querySelector(".audio");
@@ -1222,7 +1222,10 @@ playButton.addEventListener("click" , function(){
 volumeCard.addEventListener("click" , function(event){
     music.volume = event.offsetX/100 ;
     volume.style.width=`${event.offsetX}px`;
-})
+
+})*/
+
+https://sabzlearn.ir/lesson/4-31573/
  
  
  
