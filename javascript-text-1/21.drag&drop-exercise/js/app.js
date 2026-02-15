@@ -21,24 +21,30 @@ function addTodo() {
   let todoNew = todoInput.value;
 
     todoSection.insertAdjacentHTML("beforeend" , 
-  `<article class="todo" id="todo-56287" draggable="true" ondragstart="dragStartHandler(event)">
+  `<article class="todo" id="todo-56287" 
+  draggable="true" 
+  ondragStart="dragStartHandler(event)">
   <p>${todoNew}</p>
   </article>`
 );
 modal.classList.add("hidden");
+todoInput.value="";
   }
 
-
 function dragStartHandler(event) {
-  // Write Codes
+  event.dataTransfer.setData("elementId" , event.currentTarget.id);
 }
-
 function dragOverHandler(event) {
-  // Write Codes
+ event.preventDefault();
 }
 
 function dropHandler(event) {
-  // Write Codes
+  event.preventDefault();
+
+  const elementId = event.dataTransfer.getData("elementId");
+  const element = document.getElementById(elementId);
+
+  event.currentTarget.appendChild(element);
 }
 
 openModalBtn.addEventListener("click", showAddTodoModal);
