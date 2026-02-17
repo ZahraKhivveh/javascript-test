@@ -1224,8 +1224,21 @@ volumeCard.addEventListener("click" , function(event){
     volume.style.width=`${event.offsetX}px`;
 
 })*/
+// ! EXERCISE--70
+let btn= document.querySelector(".btn");
 
-https://sabzlearn.ir/lesson/4-31573/
+function setData(){
+    localStorage.setItem("name" , "maryam");
+    localStorage.setItem("name" , "sisi");
+}
+function getData(){
+    let vv = localStorage.getItem("name");
+    console.log(vv);
+}
+btn.addEventListener("click" , getData);
+btn.addEventListener("click" , setData);
+
+
  
  
  
