@@ -1,0 +1,29 @@
+.btn{
+    width: 200px;
+    height: 55px;
+    background: #2658e4;
+    color: rgb(255, 255, 255);
+    font-size: larger;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    margin-bottom: 30px;
+}
+.btn:hover{
+     background: #557deb; 
+}
+.dix{
+    width: 180px;
+    height: 180px;
+    background: #9fd0e4;
+    position: relative;
+}
+@keyframes move {
+    from{
+        top: 0px;
+    }to{
+        top:180px;
+    }
+}

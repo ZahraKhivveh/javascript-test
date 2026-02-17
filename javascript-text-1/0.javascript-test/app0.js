@@ -1223,7 +1223,7 @@ volumeCard.addEventListener("click" , function(event){
     music.volume = event.offsetX/100 ;
     volume.style.width=`${event.offsetX}px`;
 
-})*/
+})
 // ! EXERCISE--70
 let btn= document.querySelector(".btn");
 
@@ -1236,8 +1236,17 @@ function getData(){
     console.log(vv);
 }
 btn.addEventListener("click" , getData);
-btn.addEventListener("click" , setData);
+btn.addEventListener("click" , setData);*/
+// ! EXERCISE--71
+let btn = document.querySelector(".btn");
+let dix = document.querySelector(".dix");
+let h11 = document.querySelector("#h1yy");
 
+function clck(){
+    h11.style.cssText = "color :red ; margin:50px; "
+    dix.style.animation=" move 8s 1113";
+}
+btn.addEventListener("click" , clck);
 
  
  
