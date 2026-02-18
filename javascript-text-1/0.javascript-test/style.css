@@ -1,3 +1,10 @@
+
+:root{
+    --primary-color1: purple ;
+}
+#h1yy{
+    color: var(--primary-color1);
+}
 .btn{
     width: 200px;
     height: 55px;

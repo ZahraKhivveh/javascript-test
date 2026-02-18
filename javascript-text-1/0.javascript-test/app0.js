@@ -1236,7 +1236,7 @@ function getData(){
     console.log(vv);
 }
 btn.addEventListener("click" , getData);
-btn.addEventListener("click" , setData);*/
+btn.addEventListener("click" , setData);
 // ! EXERCISE--71
 let btn = document.querySelector(".btn");
 let dix = document.querySelector(".dix");
@@ -1246,7 +1246,13 @@ function clck(){
     h11.style.cssText = "color :red ; margin:50px; "
     dix.style.animation=" move 8s 1113";
 }
-btn.addEventListener("click" , clck);
+btn.addEventListener("click" , clck);*/
+// ! EXERCISE--72
+let btn = document.querySelector(".btn");
+function valueVar(){
+    document.documentElement.style.setProperty("--primary-color1" , "green");
+}
+btn.addEventListener("click" , valueVar);
 
  
  
