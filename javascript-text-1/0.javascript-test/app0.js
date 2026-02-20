@@ -1246,13 +1246,18 @@ function clck(){
     h11.style.cssText = "color :red ; margin:50px; "
     dix.style.animation=" move 8s 1113";
 }
-btn.addEventListener("click" , clck);*/
+btn.addEventListener("click" , clck);
 // ! EXERCISE--72
 let btn = document.querySelector(".btn");
 function valueVar(){
     document.documentElement.style.setProperty("--primary-color1" , "green");
 }
 btn.addEventListener("click" , valueVar);
+// ! EXERCISE--73
+let dd = document.querySelector(".dd");
+let date = new Date();
+dd.innerHTML = date.getFullYear();*/
+// ! EXERCISE--74
 
  
  
