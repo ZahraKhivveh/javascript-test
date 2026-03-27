@@ -7,6 +7,7 @@ const forwardBtn = document.querySelector(".forward");
 const backForwardBtn = document.querySelector(".back-forward");
 const musicCover = document.querySelector("img");
 const musicTitle = document.querySelector("h1");
+let mainMusicIndex = 0;
 
 const musics = [
   {
@@ -31,52 +32,53 @@ const musics = [
     singer: "یاس",
   },
 ];
-
-let mainMusicIndex = 0;
-
-function tenSecForwardHandler() {
-  music.currentTime += 10;
-}
-
-function tenSecBackForwardHandler() {
-  music.currentTime -= 10;
-}
-
-function playOrPauseHandler() {
-  if (playOrPauseBtn.className.includes("fa-play")) {
+function playOrPauseHandler(){
+  if(playOrPauseBtn.className.includes("fa-play")){
     music.play();
     playOrPauseBtn.classList.remove("fa-play");
     playOrPauseBtn.classList.add("fa-pause");
-  } else {
+  }else{
     music.pause();
     playOrPauseBtn.classList.remove("fa-pause");
     playOrPauseBtn.classList.add("fa-play");
   }
 }
-
-function forwardHandler() {
+function tenSecForwardHandler(){
+music.currentTime +=10 ;
+}
+function tenSecBackForwardHandler(){
+  music.currentTime -=10 ;
+}
+function forwardHandler(){
   mainMusicIndex++;
-  if (mainMusicIndex > 2) {
-    mainMusicIndex = 0;
+  if(mainMusicIndex>2){
+    mainMusicIndex=0;
   }
-
-  const mainMusic = musics[mainMusicIndex];
-
-  musicCover.setAttribute("src", mainMusic.cover);
-  music.setAttribute("src", mainMusic.src);
-  musicTitle.innerHTML = `${mainMusic.title} - ${mainMusic.singer}`;
+  let originMusic =musics[mainMusicIndex];
+  musicCover.setAttribute("src" , originMusic.cover);
+  musicTitle.innerHTML = `${originMusic.title} - ${originMusic.singer}`;
+  music.setAttribute("src" , originMusic.src);
 
   music.play();
   playOrPauseBtn.classList.remove("fa-play");
   playOrPauseBtn.classList.add("fa-pause");
 }
+function backForwardHandler(){
+  mainMusicIndex--;
+  if(mainMusicIndex<0){
+    mainMusicIndex=2;
+  }
+  let originMusic =musics[mainMusicIndex];
+  musicCover.setAttribute("src" , musicCover);
+  musicTitle.innerHTML=`${originMusic.title} - ${originMusic.singer}`;
+  music.setAttribute("src" , originMusic.src);
 
-function backForwardHandler() {
-  //* Codes (You)
+  music.play();
+  playOrPauseBtn.classList.remove("fa-play");
+  playOrPauseBtn.classList.add("fa-pause");
 }
-
-tenSecForward.addEventListener("click", tenSecForwardHandler);
-tenSecBackForward.addEventListener("click", tenSecBackForwardHandler);
 playOrPauseBtn.addEventListener("click", playOrPauseHandler);
-forwardBtn.addEventListener("click", forwardHandler);
-backForwardBtn.addEventListener("click", backForwardHandler);
+tenSecForward.addEventListener("click" , tenSecForwardHandler);
+tenSecBackForward.addEventListener("click" , tenSecBackForwardHandler);
+forwardBtn.addEventListener("click" ,forwardHandler);
+backForwardBtn.addEventListener("click" , backForwardHandler);

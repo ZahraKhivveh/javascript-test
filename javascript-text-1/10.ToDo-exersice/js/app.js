@@ -1,56 +1,58 @@
 const openModalButton = document.querySelector(".open-modal-button");
 const addTodoModal = document.querySelector(".modal-screen");
-const cancelBtn = document.querySelector(".cancel");
 const closeModalX = document.querySelector(".close-modal-x");
-const createTodoBtn = document.querySelector(".create");
+const cancel = document.querySelector(".cancel");
 const todoInput = document.querySelector(".input");
 const todosContainer = document.querySelector(".todos-container");
+const createTodoBtn = document.querySelector(".create");
 
-function showModal() {
-  //* todoInput.focus();
-  addTodoModal.classList.remove("hidden");
-}
+function addTodo(){
+  let newTodoTitle = todoInput.value;
 
-function hideModal() {
-  addTodoModal.classList.add("hidden");
-}
+  let articleElem = document.createElement("article");
+  articleElem.className = "todo";
 
-function addTodo() {
-  const newTodoTitle = todoInput.value;
-
-  let articlesElem = document.createElement("article");
-  articlesElem.className = "todo";
-
-  const todoDataDiv = document.createElement("div");
+  let todoDataDiv = document.createElement("div");
   todoDataDiv.className = "todo-data";
 
-  const todoTitleElem = document.createElement("p");
+  let todoTitleElem = document.createElement("p");
   todoTitleElem.innerHTML = newTodoTitle;
 
-  const todoButtonsDiv = document.createElement("div");
+  let todoButtonsDiv = document.createElement("div");
   todoButtonsDiv.className = "todo-buttons";
 
-  const removeTodoBtn = document.createElement("button");
+  let removeTodoBtn = document.createElement("button");
   removeTodoBtn.innerHTML = "حذف";
   removeTodoBtn.className = "delete";
 
+  removeTodoBtn.addEventListener("click" ,function (event){
+const mainTodo = event.target.parentElement.parentElement;
+mainTodo.remove();
+} );
   todoButtonsDiv.append(removeTodoBtn);
   todoDataDiv.append(todoTitleElem);
-  articlesElem.append(todoDataDiv);
-  articlesElem.append(todoButtonsDiv);
-  
-  todosContainer.append(articlesElem);
+  articleElem.append(todoButtonsDiv);
+  articleElem.append(todoDataDiv);
+  todosContainer.append(articleElem);
 
   hideModal();
   todoInput.value = "";
 }
 
-openModalButton.addEventListener("click", showModal);
-cancelBtn.addEventListener("click", hideModal);
-closeModalX.addEventListener("click", hideModal);
-createTodoBtn.addEventListener("click", addTodo);
-document.body.addEventListener("keydown", function (event) {
-  if (event.key === "Escape") {
+function showModal(){
+  addTodoModal.classList.remove("hidden");
+}
+function hideModal(){
+  addTodoModal.classList.add("hidden");
+}
+
+openModalButton.addEventListener("click" , showModal);
+createTodoBtn.addEventListener("click" , addTodo);
+cancel.addEventListener("click" , hideModal);
+closeModalX.addEventListener("click" , hideModal);
+document.body.addEventListener("keydown" , function(event){
+  if(event.key ==="Escape"){
     hideModal();
   }
 });
+

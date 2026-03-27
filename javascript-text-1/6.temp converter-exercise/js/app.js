@@ -1,18 +1,18 @@
-const tempInput = document.querySelector(".temp-input");
+let tempInput = document.querySelector(".temp-input");
+let clearBtn = document.querySelector(".clear-btn");
+let convertBtn = document.querySelector(".convert-btn");
 const resultElem = document.querySelector(".f-result");
-const convertBtn = document.querySelector(".convert-btn");
-const clearBtn = document.querySelector(".clear-btn");
 
-function calcTemp(){
-  let ctemp= +tempInput.value;
-  if(!isNaN(ctemp)){
-   let ftemp = ctemp *1.8 + 32;
-   resultElem.innerHTML = ftemp;
+function calc(){
+  let temp = +tempInput.value;
+  if(!isNaN(temp)){
+    let tempF = temp*1.8 + 32 ;
+    resultElem.innerHTML = tempF ;
   }
 }
-function clearData (){
-  tempInput.value = "";
-  resultElem.innerHTML = "";
+function clearData(){
+  tempInput.value="";
+  tempInput.innerHTML="";
 }
-convertBtn.addEventListener("click" , calcTemp);
-clearBtn.addEventListener("click" , clearData );
+convertBtn.addEventListener("click" , calc);
+clearBtn.addEventListener("click" , clearData);

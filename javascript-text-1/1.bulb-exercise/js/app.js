@@ -1,18 +1,15 @@
-let btn=document.querySelector(".button");
-let img=document.querySelector(".oo-img");
-
-let isON=false;
-
-btn.addEventListener("click" , function(){
-  if(isON){
-    img.setAttribute("src" , "./pics/bulboff.gif");
-    btn.innerHTML="Turn ON the bulb";
-    isON = false; 
+let button = document.querySelector(".button");
+let ooImg = document.querySelector(".oo-img");
+let isOn = false;
+function bulbOn(){
+  if(isOn){
+   ooImg.setAttribute("src" , "./pics/bulboff.gif");
+   button.innerHTML = "لامپ را روشن کن";
+   isOn = false;
   }else{
-    img.setAttribute("src" , "./pics/bulbon.gif");
-    btn.innerHTML="Turn OFF the bulb";
-    isON=true;
+    ooImg.setAttribute("src" , "./pics/bulbon.gif")
+    button.innerHTML = "لامپ را خاموش کن";
+    isOn = true;
   }
-
 }
-);
+button.addEventListener("click" , bulbOn);

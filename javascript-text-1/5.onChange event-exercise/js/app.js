@@ -8,23 +8,22 @@ let cities ={
 اصفهان:["اصفهان" , "نجف اباد" , "کاشان"],
 مازندران:["ساری" , "امل" ,"بابل"],
 };
-let provinces = Object.keys(cities);  /array/
+
+let provinces = Object.keys(cities);
 
 let newOption;
-provinces.forEach(function(province) {
+provinces.forEach(function(province){
   newOption = document.createElement("option");
   newOption.className= "px-4";
-  newOption.value = province;
-  newOption.innerHTML=province;
+  newOption.value = province ; 
+  newOption.innerHTML = province;
   provinceInput.append(newOption);
 });
-
 provinceInput.addEventListener("change" , function(){
-  let province = provinceInput.value ;
+  let province = provinceInput.value;
   let cityOf = cities[province];
- 
-  cityInput.innerHTML="";
-  let newCityOption;
+  cityInput.innerHTML = "";
+  let newCityOption ;
 cityOf.forEach(function(city) {
   newCityOption = document.createElement("option");
   newCityOption.className= "px-4";

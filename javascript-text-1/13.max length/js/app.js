@@ -1,7 +1,9 @@
-const input = document.querySelector("input");
-const remaining = document.querySelector(".max-length");
-const inputMaxLength = +input.getAttribute("maxlength");
+let input = document.querySelector("input");
+let maxLength = document.querySelector(".max-length");
+let num11 = +input.getAttribute("maxlength");
 
-input.addEventListener("keyup", function () {
-  remaining.innerHTML = inputMaxLength - input.value.length;
-}); 
+function show(){
+maxLength.innerHTML= num11-input.value.length;
+}
+
+input.addEventListener("keyup" , show);

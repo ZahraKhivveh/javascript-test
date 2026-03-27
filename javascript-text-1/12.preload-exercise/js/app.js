@@ -7,3 +7,4 @@ function showContent() {
   //* Way 2
   // loadingScreen.className += " hidden class-test";
 }
+/لودر در سند html گذاشته شده است./ 

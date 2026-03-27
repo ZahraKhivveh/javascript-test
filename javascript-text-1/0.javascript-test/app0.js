@@ -1,6 +1,6 @@
-//  ?=========================================================================================
-//  ?-------------------------------Elementary Level--------------------------------
-//  ?=========================================================================================
+//  =========================================================================================
+//  -------------------------------Elementary Level--------------------------------
+//  =========================================================================================
 // ! introduce with java script:
 /*console.log("Hi this is Zahra Khivveh");
 // ! variables:
@@ -1256,8 +1256,53 @@ btn.addEventListener("click" , valueVar);
 // ! EXERCISE--73
 let dd = document.querySelector(".dd");
 let date = new Date();
-dd.innerHTML = date.getFullYear();*/
+dd.innerHTML = date.getFullYear();
 // ! EXERCISE--74
+let lii1 = document.querySelector(".lii1");
+lii1.setAttribute("id" , "lii2");
+console.log(lii1);
+----------------------------------------------------------------
+// ! EXERCISE--75
+let date= document.querySelector(".date");
+console.log(date.innerHTML);
+console.log(date.className);
+let input = document.querySelector(".input1");
+console.log(input.value);
+let li1= document.querySelectorAll(".li1");
+li1.forEach(function(element){
+console.log(element);
+
+});
+let submit = document.querySelector(".submit");
+function hallo(){
+    alert(`thanks`);
+}
+submit.addEventListener("click" , hallo);
+// ! EXERCISE--76
+let maryam = document.createElement("h3");
+maryam.innerHTML = "this is maryam";
+maryam.className = "lili";
+console.log(maryam);
+maryam.style.color="green";
+document.body.append(maryam);
+// ! EXERCISE--77
+let submit1 = document.querySelector(".submit");
+function EV(event){
+console.log(event);
+}
+submit1.addEventListener("click" , EV);
+alert(submit1.nextSibling);*/
+// ! EXERCISE--78
+let date = document.querySelector("#h1yy");
+function sell(event){
+console.log(event.target);
+}
+date.addEventListener("copy" , sell);
+date.addEventListener("cut" , sell);
+date.addEventListener("paste" , sell);
+
+
+
 
  
  

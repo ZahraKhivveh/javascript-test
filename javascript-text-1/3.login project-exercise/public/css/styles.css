@@ -638,7 +638,8 @@ video {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  font-size: 0.875rem;
+  font-size: 1.2rem;
+  font-weight: bold;
   line-height: 1.25rem;
 }
 

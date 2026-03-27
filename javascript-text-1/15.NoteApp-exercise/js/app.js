@@ -2,90 +2,81 @@ const createButton = document.querySelector(".create-button");
 const closeModalBtn = document.querySelector(".close");
 const closeXBtn = document.querySelector(".close-x-btn");
 const modal = document.querySelector(".modal-screen");
-const textarea = document.querySelector("textarea");
 const createNoteBtn = document.querySelector(".continue");
+const textarea = document.querySelector("textarea");
 const colorsBoxes = document.querySelectorAll(".color-box");
 const notesContainer = document.querySelector(".notes-container");
 const searchInput = document.querySelector(".search-input");
 const searchBtn = document.querySelector(".search-btn");
-
 let mainColor;
 
-function showModal() {
+function showModal(){
   modal.classList.remove("hidden");
 }
-
-function hideModal() {
+function hideModal(){
   modal.classList.add("hidden");
 }
 
-function addNote() {
+function addNote(){
   const note = textarea.value;
 
   const parentArticleElem = document.createElement("article");
   parentArticleElem.classList.add("note");
   parentArticleElem.style.backgroundColor = mainColor;
 
-  const noteContentElem = document.createElement("p");
+  const noteContentElem =document.createElement("p");
   noteContentElem.classList.add("note-content");
   noteContentElem.innerHTML = note;
 
-  const trashParentDiv = document.createElement("div");
-  const noteTrashElem = document.createElement("i");
+  const trashParentDiv =document.createElement("div");
+  const noteTrashElem  = document.createElement("i");
   noteTrashElem.className = "fa-solid fa-trash delete";
 
-  noteTrashElem.addEventListener("click", function (event) {
+  noteTrashElem.addEventListener("click" , function(event){
     event.target.parentElement.parentElement.remove();
   });
 
   trashParentDiv.append(noteTrashElem);
   parentArticleElem.append(noteContentElem);
   parentArticleElem.append(trashParentDiv);
-
   notesContainer.append(parentArticleElem);
-  hideModal();
+  
   textarea.value = "";
+  hideModal();
 }
 
-function searchInNotes() {
-  const searchValue = searchInput.value;
-  const notes = document.querySelectorAll(".note");
-
-  notes.forEach(function (note) {
-    const noteContentElem = note.querySelector(".note-content");
-
-    if (noteContentElem.innerHTML.includes(searchValue)) {
-      note.style.display = "flex";
-    } else {
-      note.style.display = "none";
-    }
-  });
-}
-
-colorsBoxes.forEach(function (colorBox) {
-  colorBox.addEventListener("click", function (event) {
+colorsBoxes.forEach(function(colorsBox){
+  colorsBox.addEventListener("click" , function(event){
     mainColor = event.target.dataset.color;
-
-    //* Way 1
-    // colorsBoxes.forEach(function (item) {
-    //   item.classList.remove("selected");
-    // });
-
-    //* Way 2
-    const selectedColorBox = document.querySelector(".selected");
-    selectedColorBox.classList.remove("selected");
+    
+    let selectColorBox = document.querySelector(".selected");
+    selectColorBox.classList.remove("selected");
 
     event.target.classList.add("selected");
   });
 });
 
-createButton.addEventListener("click", showModal);
-closeModalBtn.addEventListener("click", hideModal);
-closeXBtn.addEventListener("click", hideModal);
-createNoteBtn.addEventListener("click", addNote);
-searchBtn.addEventListener("click", searchInNotes);
-document.body.addEventListener("keyup", function (event) {
-  if (event.key === "Escape") {
+function search(){
+  let searchValue = searchInput.value;
+  let notes = document.querySelectorAll(".note");
+
+  notes.forEach(function(note){
+    let noteContentElem = note.querySelector(".note-content");
+    if(noteContentElem.innerHTML.includes(searchValue)){
+      note.style.display ="flex";
+    }else{
+      note.style.display= "none";
+    }
+  });
+}
+
+searchBtn.addEventListener("click" , search);
+createNoteBtn.addEventListener("click" , addNote);
+createButton.addEventListener("click" , showModal);
+closeModalBtn.addEventListener("click" , hideModal);
+closeXBtn.addEventListener("click" , hideModal);
+document.body.addEventListener("keydown" , function(event){
+  if(event.key === "Escape"){
     hideModal();
   }
 });

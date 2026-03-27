@@ -1,4 +1,4 @@
-const cityInput = document.querySelector(".city-input");
+const cityInput = document.querySelector (".city-input");
 const searchButton = document.querySelector("#search-button");
 const cityElem = document.querySelector(".city");
 const humidityElem = document.querySelector(".humidity");
@@ -12,16 +12,13 @@ const data = {
   gorgan: { temp: 35, humidity: 18, country: "Iran" },
 };
 
-function showCityWeather() {
-  const city = cityInput.value;
-  const weather = data[city.toLowerCase()]; // TABriz -> tabriz
-
-  if (weather) {
-    // weather !== undefined
-    cityElem.innerHTML = `${city}, ${weather.country}`;
+function showCityWeather(){
+  let city = cityInput.value;
+  let weather = data[city.toLowerCase()];
+  if(weather){
+    cityElem.innerHTML = `${city} : ${weather.country}`;
     humidityElem.innerHTML = `Humidity: ${weather.humidity}%`;
     tempElem.innerHTML = weather.temp;
   }
 }
-
-searchButton.addEventListener("click", showCityWeather);
+searchButton.addEventListener("click" , showCityWeather);

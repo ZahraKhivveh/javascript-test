@@ -1,20 +1,21 @@
-const keyElem = document.querySelector(".key");
-const locationElem = document.querySelector(".location");
-const codeElem = document.querySelector(".code");
-const whichElem = document.querySelector(".which");
-const keycodeTitle = document.querySelector(".keycode-title");
-const keycodeElem = document.querySelector(".keycode");
+let keyCode = document.querySelector(".keycode");
+let keycodeTitle = document.querySelector(".keycode-title");
+let location4 = document.querySelector(".location");
+let key = document.querySelector(".key");
+let which = document.querySelector(".which");
+let code = document.querySelector(".code");
 
-document.body.addEventListener("keydown", function (event) {
+function showCode(event){
   event.preventDefault();
-
-  // document.body.className = "key-pressed";
+   //این برای جلوگیری از رفتار دکمه های کیبورد است//
   document.body.classList.add("key-pressed");
 
-  keyElem.innerHTML = event.key;
-  locationElem.innerHTML = event.location;
-  codeElem.innerHTML = event.code;
-  whichElem.innerHTML = event.which;
   keycodeTitle.innerHTML = event.which;
-  keycodeElem.innerHTML = event.key;
-});
+  keyCode.innerHTML = event.key;
+  code.innerHTML= event.code;
+  which.innerHTML = event.which;
+  location4.innerHTML = event.location;
+  key.innerHTML = event.key;
+}
+
+document.body.addEventListener("keydown" , showCode);
