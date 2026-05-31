@@ -1,5 +1,6 @@
 const quote = document.querySelector(".quote");
 const author = document.querySelector(".author");
+let btn = document.querySelector(".btn");
 
 const quotes = [
   {
@@ -50,11 +51,11 @@ const quotes = [
     author: "النور روزولت",
   },
 ];
-
-function showRandomQuote() {
-  const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
-  const mainQuote = quotes[randomQuoteIndex];
-
-  quote.innerHTML = mainQuote.content;
-  author.innerHTML = mainQuote.author;
+function show(){
+  let quoteIndex = Math.floor(Math.random() * quotes.length);
+  let xx = quotes[quoteIndex];
+  quote.innerHTML = xx.content;
+  author.innerHTML = xx.author;
 }
+
+btn.addEventListener("click" , show);
